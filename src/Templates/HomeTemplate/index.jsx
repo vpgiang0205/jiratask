@@ -1,8 +1,11 @@
-import Header from './components/Header'
-import PageContent from './components/PageContent'
+
+import Header from './components/Header';
+import PageContent from './components/PageContent';
+
 export default function HomeTemplate() {
+
     return (
-        <div className='d-flex' style={{ minHeight: "100vh" }}>
+        <div className=''>
             <Header />
             <PageContent />
         </div>

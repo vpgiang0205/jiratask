@@ -1,15 +1,11 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { actSignin } from '../../redux/actions/actAuth';
-import {useDispatch} from 'react-redux'
-import { useCheckRole } from '../../hooks/useCheckRole';
+import { useDispatch } from 'react-redux'
 export default function Signin() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const userData = useCheckRole()
-
-  console.log(userData);
-  
   const [state, setState] = useState({
     email: "",
     passWord: ""
@@ -25,12 +21,11 @@ export default function Signin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(actSignin(state))
-    console.log(state);
+    dispatch(actSignin(state, navigate))
   }
 
   return (
-    <div className='login-page d-md-flex' style={{ minHeight: '100vh' }}>
+    <div className=' d-md-flex' style={{ minHeight: '100vh' }}>
 
       <img className='col-md-7' width="auto" src="https://www.prosoftly.com/wp-content/uploads/2020/01/task.png" />
 

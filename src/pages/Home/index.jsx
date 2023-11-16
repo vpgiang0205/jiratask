@@ -5,13 +5,15 @@ import { actDeleteProject, actListProject } from "../../redux/actions/actProject
 import { Table, Button } from 'antd';
 import './home.css'
 import { useCheckRole } from "../../hooks/useCheckRole";
+
 export default function Home() {
 
   const dispatch = useDispatch();
   const user = useCheckRole();
+
   useEffect(() => {
     dispatch(actListProject())
-  }, [dispatch])
+  }, [])
 
   const { data, loading } = useSelector((state) => state.projectReducer)
 
@@ -80,7 +82,9 @@ export default function Home() {
   const fetchData = () => {
     if (data) {
       console.log(data);
-      return <Table rowKey="id" dataSource={data} columns={columns} loading={loading}></Table>
+      return <div className="container bg-dark" >
+        <Table className="bg-danger" rowKey="id" dataSource={data} columns={columns} loading={loading}></Table>
+      </div>
     }
     else if (loading) {
       return <loading />

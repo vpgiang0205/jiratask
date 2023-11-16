@@ -51,7 +51,7 @@ const actSignupRequest = () => ({ type: actions.SIGNUP_REQUEST })
 const actSignupSuccess = (data) => ({ type: actions.SIGNUP_SUCCESS, payload: data })
 const actSignupFail = (error) => ({ type: actions.SIGNUP_FAIL, payload: error })
 
-export const actSignin = (userLogin) => {
+export const actSignin = (userLogin, navigate) => {
     return (dispatch) => {
         console.log(userLogin);
         dispatch(actSigninRequest)
@@ -60,8 +60,7 @@ export const actSignin = (userLogin) => {
                 if (result.data.statusCode === 200) {
                     const user = result.data.content;
                     dispatch(actSigninSuccess(user))
-                    // navigate('/')
-                    console.log(user);
+                    navigate('/')
                 }
             })
             .catch((error) => {
