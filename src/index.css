@@ -39,3 +39,7 @@ a {
   list-style: none;
   text-decoration: none;
 }
+
+:root {
+  --primary-color: #96c05a;
+}

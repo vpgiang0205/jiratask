@@ -1,6 +1,7 @@
 import { Button } from 'antd';
 import { useCheckRole } from '../../../../hooks/useCheckRole'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './navi.css'
 export default function Navigator() {
     const user = useCheckRole();
 
@@ -16,7 +17,7 @@ export default function Navigator() {
     return (
         (user) && (
             <div>
-                <ul className="fixed p-2 nav nav-pills bg-dark flex-column" style={{ minHeight: "100vh" }}>
+                <ul className="navigator p-2 nav nav-pills flex-column" style={{ minHeight: "100vh" }}>
                     <li className="nav-item">
                         <a href="#" className="nav-link">hello, {user.name}</a>
                     </li>
@@ -37,6 +38,10 @@ export default function Navigator() {
 
                     <li className="nav-item">
                         <a href="#" className="nav-link">Create Task</a>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link to="/menu-page" className="nav-link">Menu CloudPot</Link>
                     </li>
                     <li className="nav-item">
                         <li className="nav-link">

@@ -18,6 +18,10 @@ const routes = [
                 path: "signup-page",
                 element: lazy(() => import("../pages/Signup"))
             },
+            {
+                path: "menu-page",
+                element: lazy(() => import ("../pages/CloudPot"))
+            }
         ]
     },
 
