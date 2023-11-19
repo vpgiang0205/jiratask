@@ -1,4 +1,8 @@
 import './cloudpot.css'
+import combofresh from '../../../public/images/cloudpot-menu/combo-fresh.jpg';
+import comboenergy from '../../../public/images/cloudpot-menu/combo-energy.jpg';
+import combowandering from '../../../public/images/cloudpot-menu/combo-wandering.jpg';
+import comboyouthful from '../../../public/images/cloudpot-menu/combo-youthful.jpg';
 
 export default function CloudPot() {
     return (
@@ -84,21 +88,21 @@ export default function CloudPot() {
             <div id='section__Combo' className=''>
 
                 <div className='combo-item'>
-                    <img src='/public/images/cloudpot-menu/combo-youthful.jpg' />
+                    <img src={comboyouthful} />
                 </div>
 
 
                 <div className='combo-item'>
-                    <img src='/public/images/cloudpot-menu/combo-energy.jpg' />
+                    <img src={comboenergy} />
                 </div>
 
                 <div className='combo-item'>
-                    <img src='/public/images/cloudpot-menu/combo-wandering.jpg' />
+                    <img src={combowandering} />
                 </div>
 
 
                 <div className='combo-item'>
-                    <img src='/public/images/cloudpot-menu/combo-fresh.jpg' />
+                    <img src={combofresh} />
                 </div>
             </div>
         </div>
